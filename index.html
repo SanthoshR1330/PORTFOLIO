@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh R | AI & Web Developer Portfolio</title>
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description" content="Explore the modern, interactive portfolio of Santhosh R, an AI & Data Science student, Full Stack & Flutter Developer. Experience advanced visual designs, custom audio synthesis, and modern project dashboards.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-galaxy">
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Space Audio Elements -->
+    <div class="sound-control-panel">
+        <button id="sound-toggle" aria-label="Toggle Cosmic Sound" class="sound-btn">
+            <i class="fas fa-volume-mute" id="sound-icon"></i>
+            <span class="sound-text">AMBIENT SOUND</span>
+        </button>
+    </div>
+
+    <!-- Background Layers -->
+    <div id="particles-js"></div>
+    <canvas id="meteor-canvas"></canvas>
+    <div class="nebula-overlay" id="nebula-overlay"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-overlay" id="loader-overlay">
+        <div class="loader-content">
+            <div class="galaxy-spinner">
+                <div class="ring ring-outer"></div>
+                <div class="ring ring-middle"></div>
+                <div class="ring ring-inner"></div>
+                <div class="core-star"></div>
+            </div>
+            <h1 class="loader-title">INITIALIZING PORTFOLIO</h1>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="load-progress"></div>
+            </div>
+            <div class="loader-status" id="loader-status">Loading visual components... 0%</div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="galaxy-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="neon-purple">SANTHOSH</span><span class="neon-cyan">.AI</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
+                <a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a>
+                <a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i> Projects</a>
+                <a href="#achievements" class="nav-link"><i class="fas fa-trophy"></i> Achievements</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Space Mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button id="mobile-toggle" class="nav-icon-btn mobile-menu-btn" aria-label="Toggle Mobile Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Scroll Progress -->
+        <div class="scroll-progress-container">
+            <div class="scroll-progress" id="scroll-progress-bar"></div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- 1. Galaxy Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-visual" data-aos="fade-right">
+                    <div class="profile-galaxy-wrap">
+                        <div class="orbiting-tech-container">
+                            <!-- Orbit 1 (Flutter) -->
+                            <div class="orbit-path path-1">
+                                <div class="orbit-item item-flutter" title="Flutter">
+                                    <i class="fab fa-flutter"></i>
+                                </div>
+                            </div>
+                            <!-- Orbit 2 (Python) -->
+                            <div class="orbit-path path-2">
+                                <div class="orbit-item item-python" title="Python">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                            </div>
+                            <!-- Orbit 3 (JavaScript) -->
+                            <div class="orbit-path path-3">
+                                <div class="orbit-item item-js" title="JavaScript">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                            </div>
+                            <!-- Profile Container -->
+                            <div class="profile-glow-ring">
+                                <div class="profile-inner-border">
+                                    <img src="profile.png.png" alt="Santhosh R" class="profile-image">
+                                </div>
+                                <div class="neon-ring-spinning"></div>
+                                <div class="neon-ring-spinning reverse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-content" data-aos="fade-left">
+                    <div class="telemetry-tag"><i class="fas fa-check-circle"></i> STATUS: AVAILABLE FOR WORK</div>
+                    <h2 class="hero-greeting">HELLO! I AM</h2>
+                    <h1 class="hero-name">Santhosh R</h1>
+                    <div class="typing-container">
+                        <span class="static-txt">A Dedicated </span>
+                        <span id="typed-text" class="typed-text"></span>
+                    </div>
+                    <p class="hero-description">
+                        Specializing in artificial intelligence, full stack web development, and dynamic application design. Engineering robust backend architectures and clean user interfaces.
+                    </p>
+                    <div class="hero-cta-buttons">
+                        <a href="#about" class="btn btn-primary btn-glow-cyan"><i class="fas fa-arrow-down"></i> Explore Portfolio</a>
+                        <a href="#contact" class="btn btn-secondary btn-glow-purple"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="explore-down-arrow">
+                <span class="chevron"></span>
+                <span class="chevron"></span>
+                <span class="chevron"></span>
+            </a>
+        </section>
+
+        <!-- 2. Cosmic About Section -->
+        <section id="about" class="about-section scroll-spy-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">PORTFOLIO: PROFILE</span>
+                <h2 class="section-title">ABOUT ME</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-single-wrap" style="max-width: 800px; margin: 0 auto;">
+                <!-- Bio / Hologram Text Card -->
+                <div class="about-bio-cards" data-aos="fade-up">
+                    <div class="glass-card about-intro-card">
+                        <div class="card-icon-header">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="glow-text">My Journey</h3>
+                        <p>
+                            Passionate about transforming innovative ideas into intelligent digital solutions, I am currently pursuing a Bachelor’s degree in <strong>Artificial Intelligence & Data Science</strong> at <span class="highlight-cyan">M. Kumarasamy College of Engineering</span>. I enjoy building applications with seamless user experiences, optimized backend systems, and AI-driven functionalities that solve real-world challenges.
+                        </p>
+                        <p>
+                            With strong interest in Full Stack Development, Flutter, Artificial Intelligence, and Business Intelligence, I constantly explore emerging technologies and push my creativity beyond limits. My journey is driven by curiosity, continuous learning, and the vision of creating impactful technology that blends innovation, performance, and user-centric design.
+                        </p>
+                    </div>
+
+                    <div class="about-mini-stats-grid">
+                        <div class="glass-card stat-item">
+                            <span class="stat-number">AI + DS</span>
+                            <span class="stat-lbl">Core Study</span>
+                        </div>
+                        <div class="glass-card stat-item">
+                            <span class="stat-number">BI + DEV</span>
+                            <span class="stat-lbl">Competencies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section scroll-spy-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">PORTFOLIO: EDUCATION</span>
+                <h2 class="section-title">EDUCATION</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="education-grid">
+                <!-- University Card -->
+                <div class="glass-card education-card" data-aos="fade-right" data-tilt>
+                    <div class="edu-header">
+                        <div class="edu-logo-circle" style="color: var(--neon-cyan); border-color: var(--neon-cyan);">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="edu-meta-title">
+                            <h3>Bachelor of Technology</h3>
+                            <span class="edu-spec neon-cyan">Artificial Intelligence and Data Science</span>
+                        </div>
+                    </div>
+                    <div class="edu-body">
+                        <h4 class="edu-inst">M. Kumarasamy College of Engineering</h4>
+                        <span class="edu-loc">Karur, Tamil Nadu</span>
+                    </div>
+                    <div class="edu-footer-pills">
+                        <span class="edu-pill pill-date">2023 - 2027</span>
+                        <span class="edu-pill pill-grade neon-cyan-border">CGPA: 8.1</span>
+                    </div>
+                </div>
+
+                <!-- School Card -->
+                <div class="glass-card education-card" data-aos="fade-left" data-tilt>
+                    <div class="edu-header">
+                        <div class="edu-logo-circle" style="color: var(--neon-pink); border-color: var(--neon-pink); box-shadow: var(--glow-shadow-pink);">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="edu-meta-title">
+                            <h3>Higher Secondary Certificate (HSC)</h3>
+                            <span class="edu-spec neon-pink">Science Stream</span>
+                        </div>
+                    </div>
+                    <div class="edu-body">
+                        <h4 class="edu-inst">Cheran matriculation higher secondary school</h4>
+                        <span class="edu-loc">Karur, Tamil Nadu</span>
+                    </div>
+                    <div class="edu-footer-pills">
+                        <span class="edu-pill pill-date">2022 - 2023</span>
+                        <span class="edu-pill pill-grade neon-pink-border">93%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Galaxy Skills Section -->
+        <section id="skills" class="skills-section scroll-spy-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">PORTFOLIO: SKILLS</span>
+                <h2 class="section-title">MY SKILLS</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill Card 1: Flutter -->
+                <div class="glass-card skill-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-particle-holder"></div>
+                    <div class="skill-icon"><i class="fab fa-flutter"></i></div>
+                    <h3 class="skill-title">Flutter</h3>
+                    <div class="skill-progress-wrap">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                            <circle class="progress-ring-circle progress-circle-anim" stroke="var(--neon-cyan)" stroke-width="8" stroke-dasharray="314.15" stroke-dashoffset="47" fill="transparent" r="50" cx="60" cy="60"/>
+                        </svg>
+                        <div class="skill-percent">85%</div>
+                    </div>
+                    <div class="skill-tag">Cross Platform Mobile Apps</div>
+                </div>
+
+                <!-- Skill Card 2: Python -->
+                <div class="glass-card skill-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-particle-holder"></div>
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h3 class="skill-title">Python</h3>
+                    <div class="skill-progress-wrap">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                            <circle class="progress-ring-circle progress-circle-anim" stroke="var(--neon-purple)" stroke-width="8" stroke-dasharray="314.15" stroke-dashoffset="31.4" fill="transparent" r="50" cx="60" cy="60"/>
+                        </svg>
+                        <div class="skill-percent">90%</div>
+                    </div>
+                    <div class="skill-tag">AI, Data Science & Backend</div>
+                </div>
+
+                <!-- Skill Card 3: JavaScript -->
+                <div class="glass-card skill-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-particle-holder"></div>
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <h3 class="skill-title">JavaScript</h3>
+                    <div class="skill-progress-wrap">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                            <circle class="progress-ring-circle progress-circle-anim" stroke="var(--neon-pink)" stroke-width="8" stroke-dasharray="314.15" stroke-dashoffset="62.8" fill="transparent" r="50" cx="60" cy="60"/>
+                        </svg>
+                        <div class="skill-percent">80%</div>
+                    </div>
+                    <div class="skill-tag">Frontend & Client Scripts</div>
+                </div>
+
+                <!-- Skill Card 4: IBM Cognos Analytics -->
+                <div class="glass-card skill-card" data-tilt data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-particle-holder"></div>
+                    <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="skill-title">Cognos BI</h3>
+                    <div class="skill-progress-wrap">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                            <circle class="progress-ring-circle progress-circle-anim" stroke="#3b82f6" stroke-width="8" stroke-dasharray="314.15" stroke-dashoffset="78.5" fill="transparent" r="50" cx="60" cy="60"/>
+                        </svg>
+                        <div class="skill-percent">75%</div>
+                    </div>
+                    <div class="skill-tag">Business Intelligence & Analytics</div>
+                </div>
+            </div>
+
+            <!-- Supplementary Skills Lists (Horizontal progress bars) -->
+            <div class="skills-aux-section" data-aos="fade-up">
+                <h3 class="aux-title">Additional Core Competencies</h3>
+                <div class="aux-grid">
+                    <!-- HTML / CSS -->
+                    <div class="aux-bar-item">
+                        <div class="aux-meta"><span>HTML5 & CSS3</span><span>95%</span></div>
+                        <div class="aux-bar-bg"><div class="aux-bar-fill fill-html" style="width: 95%"></div></div>
+                    </div>
+                    <!-- Java -->
+                    <div class="aux-bar-item">
+                        <div class="aux-meta"><span>Java Core</span><span>75%</span></div>
+                        <div class="aux-bar-bg"><div class="aux-bar-fill fill-java" style="width: 75%"></div></div>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="aux-bar-item">
+                        <div class="aux-meta"><span>MongoDB</span><span>80%</span></div>
+                        <div class="aux-bar-bg"><div class="aux-bar-fill fill-mongo" style="width: 80%"></div></div>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="aux-bar-item">
+                        <div class="aux-meta"><span>MySQL</span><span>85%</span></div>
+                        <div class="aux-bar-bg"><div class="aux-bar-fill fill-mysql" style="width: 85%"></div></div>
+                    </div>
+                    <!-- FastAPI -->
+                    <div class="aux-bar-item">
+                        <div class="aux-meta"><span>FastAPI</span><span>80%</span></div>
+                        <div class="aux-bar-bg"><div class="aux-bar-fill fill-fastapi" style="width: 80%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Space Projects Section -->
+        <section id="projects" class="projects-section scroll-spy-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">PORTFOLIO: WORK</span>
+                <h2 class="section-title">FEATURED PROJECTS</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: INEX -->
+                <div class="glass-card project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-preview-screen">
+                        <!-- Simulated Expense Scanning Animation -->
+                        <div class="ocr-scanner-simulator">
+                            <div class="ocr-scan-line"></div>
+                            <div class="receipt-mockup">
+                                <div class="receipt-title">RECEIPT #9802</div>
+                                <div class="receipt-dashed">-----------------</div>
+                                <div class="receipt-item">AI SERVICE: $49.00</div>
+                                <div class="receipt-item font-neon">TOTAL: $49.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title-text font-neon">INEX</h3>
+                        <p class="project-short-desc">AI-powered personal expense tracker featuring OCR bill scanning, smart budget predictions, and user expense analytics.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">OCR</span>
+                            <span class="tech-badge">ML Predict</span>
+                        </div>
+                        <button class="btn btn-secondary open-modal-btn" data-project="inex">
+                            <i class="fas fa-terminal"></i> View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Room Revenue Revolution -->
+                <div class="glass-card project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-preview-screen">
+                        <!-- Dashboard Hologram effect -->
+                        <div class="revenue-chart-mockup">
+                            <div class="bar-chart-bars">
+                                <div class="mock-bar bar-1" style="--height: 40%"></div>
+                                <div class="mock-bar bar-2" style="--height: 80%"></div>
+                                <div class="mock-bar bar-3" style="--height: 60%"></div>
+                                <div class="mock-bar bar-4" style="--height: 95%"></div>
+                                <div class="mock-bar bar-5" style="--height: 70%"></div>
+                            </div>
+                            <div class="hologram-telemetry">REV: +34%</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title-text font-neon">Revenue Revolution</h3>
+                        <p class="project-short-desc">Hotel analytics business intelligence platform. Computes occupancy optimizations, seasonal trends, and dynamically forecasts prices.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-badge">Cognos BI</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Data Analytics</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                        <button class="btn btn-secondary open-modal-btn" data-project="roomrev">
+                            <i class="fas fa-terminal"></i> View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Interview 360 -->
+                <div class="glass-card project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-preview-screen">
+                        <!-- AI Assistant / voice wave animation -->
+                        <div class="voice-assistant-simulation">
+                            <div class="voice-avatar-glow"></div>
+                            <div class="voice-waves">
+                                <span class="wave-bar w-1"></span>
+                                <span class="wave-bar w-2"></span>
+                                <span class="wave-bar w-3"></span>
+                                <span class="wave-bar w-4"></span>
+                                <span class="wave-bar w-5"></span>
+                            </div>
+                            <div class="hologram-status">EVALUATING STRESS</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title-text font-neon">Interview 360</h3>
+                        <p class="project-short-desc">Comprehensive interview preparation webapp with resume parser, AI-generated questions, voice parsing, and emotion analysis.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">WebRTC</span>
+                            <span class="tech-badge">AI Assistant</span>
+                            <span class="tech-badge">API</span>
+                        </div>
+                        <button class="btn btn-secondary open-modal-btn" data-project="interview360">
+                            <i class="fas fa-terminal"></i> View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modal -->
+        <div class="modal-overlay" id="project-modal">
+            <div class="modal-content glass-card">
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+                <div class="modal-body-layout" id="modal-body-content">
+                    <!-- Dynamically populated via script -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Achievement Galaxy Section -->
+        <section id="achievements" class="achievements-section scroll-spy-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">PORTFOLIO: STATS</span>
+                <h2 class="section-title">MY ACHIEVEMENTS</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Counters Grid -->
+            <div class="counters-grid" data-aos="fade-up">
+                <div class="glass-card counter-card">
+                    <div class="counter-number" data-target="8">0</div>
+                    <div class="counter-label">PROJECTS BUILT</div>
+                </div>
+                <div class="glass-card counter-card">
+                    <div class="counter-number" data-target="15">0</div>
+                    <div class="counter-label">CERTIFICATIONS</div>
+                </div>
+                <div class="glass-card counter-card">
+                    <div class="counter-number" data-target="8">0</div>
+                    <div class="counter-label">EVENTS ATTENDED</div>
+                </div>
+            </div>
+
+            <!-- Achievement Cards Grid -->
+            <div class="achievements-cards-grid">
+                <!-- NPTEL Joy of Python -->
+                <div class="glass-card achievement-card" data-aos="fade-right">
+                    <div class="achievement-icon-wrap bg-gold">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-text">
+                        <div class="badge-tag gold-badge">ELITE + GOLD</div>
+                        <h3>The Joy of Computing Using Python</h3>
+                        <p>NPTEL Certification credential scoring top percentile performance, highlighting proficiency in programming structure, design logic, and clean coding paradigms.</p>
+                    </div>
+                </div>
+
+                <!-- NPTEL Cognitive Psychology -->
+                <div class="glass-card achievement-card" data-aos="fade-left">
+                    <div class="achievement-icon-wrap bg-silver">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="achievement-text">
+                        <div class="badge-tag silver-badge">ELITE + SILVER</div>
+                        <h3>Introduction to Cognitive Psychology</h3>
+                        <p>NPTEL certification demonstrating understanding of cognitive models, neural systems, memory indexing, human interaction processes, and design principles.</p>
+                    </div>
+                </div>
+
+                <!-- Hackathon Organizer -->
+                <div class="glass-card achievement-card" data-aos="fade-right">
+                    <div class="achievement-icon-wrap bg-cyan">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="achievement-text">
+                        <div class="badge-tag cyan-badge">ORGANIZATION</div>
+                        <h3>StackX Hackathon Organizer</h3>
+                        <p>Led coordination efforts for the high-intensity StackX Hackathon, structuring challenges, coordinating jury evaluations, and securing API endpoints.</p>
+                    </div>
+                </div>
+
+                <!-- Hackathon Participant -->
+                <div class="glass-card achievement-card" data-aos="fade-left">
+                    <div class="achievement-icon-wrap bg-pink">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="achievement-text">
+                        <div class="badge-tag pink-badge">PARTICIPATION</div>
+                        <h3>Hackathon Competitor</h3>
+                        <p>Actively collaborated in various inter-college hackathons, designing rapid prototypes in AI analytics and flutter app models within constrained timelines.</p>
+                    </div>
+                </div>
+
+                <!-- Yoga Championship -->
+                <div class="glass-card achievement-card" data-aos="fade-right">
+                    <div class="achievement-icon-wrap bg-cyan">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="achievement-text">
+                        <div class="badge-tag cyan-badge">EXTRA CURRICULAR</div>
+                        <h3>Yoga Championship</h3>
+                        <p>Won 2 State Level Yoga Championships and 1 District Level Yoga Championship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Galaxy Contact Section -->
+        <section id="contact" class="contact-section scroll-spy-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">PORTFOLIO: CONTACT</span>
+                <h2 class="section-title">GET IN TOUCH</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="contact-container">
+                <!-- Info Cards -->
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="glass-card contact-detail-card">
+                        <i class="fas fa-envelope detail-icon icon-cyan"></i>
+                        <div>
+                            <h4>EMAIL ADDRESS</h4>
+                            <p>santhoshkumar200682@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="glass-card contact-detail-card">
+                        <i class="fas fa-phone detail-icon icon-purple"></i>
+                        <div>
+                            <h4>PHONE NUMBER</h4>
+                            <p>9360973201</p>
+                        </div>
+                    </div>
+                    <div class="glass-card contact-detail-card">
+                        <i class="fas fa-map-marker-alt detail-icon icon-pink"></i>
+                        <div>
+                            <h4>LOCATION</h4>
+                            <p>Karur, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                    <div class="glass-card contact-detail-card">
+                        <i class="fas fa-university detail-icon icon-blue"></i>
+                        <div>
+                            <h4>COLLEGE</h4>
+                            <p>M. Kumarasamy College of Engineering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="contact-form-wrap" data-aos="fade-left">
+                    <form class="glass-card contact-form" id="galaxy-contact-form">
+                        <div class="form-row">
+                            <div class="input-wrap">
+                                <input type="text" id="sender-name" required placeholder=" ">
+                                <label for="sender-name">Your Name</label>
+                                <span class="neon-line"></span>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="email" id="sender-email" required placeholder=" ">
+                                <label for="sender-email">Your Email</label>
+                                <span class="neon-line"></span>
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" id="sender-subject" required placeholder=" ">
+                            <label for="sender-subject">Subject</label>
+                            <span class="neon-line"></span>
+                        </div>
+                        <div class="input-wrap textarea-wrap">
+                            <textarea id="sender-message" required placeholder=" "></textarea>
+                            <label for="sender-message">Your Message</label>
+                            <span class="neon-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow-cyan" id="send-form-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div class="broadcast-feedback" id="form-feedback-message"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Interactive Astronaut -->
+    <div class="floating-astronaut" id="floating-astronaut">
+        <svg viewBox="0 0 100 100" width="80" height="80">
+            <g transform="translate(10, 10) scale(0.8)">
+                <!-- Suit Body -->
+                <rect x="25" y="35" width="30" height="35" rx="10" fill="#e0eafc" stroke="#1d2731" stroke-width="2"/>
+                <!-- Helmet -->
+                <circle cx="40" cy="25" r="18" fill="#f4f7f6" stroke="#1d2731" stroke-width="2"/>
+                <!-- Visor -->
+                <path d="M 28,25 Q 40,30 52,25 Q 52,18 40,18 Q 28,18 28,25" fill="#030308" stroke="#00f2fe" stroke-width="2"/>
+                <path d="M 33,21 Q 40,24 47,21" fill="none" stroke="#fff" stroke-dasharray="2"/>
+                <!-- Backpack -->
+                <rect x="18" y="40" width="8" height="25" rx="3" fill="#cbd6e2"/>
+                <!-- Limbs -->
+                <rect x="28" y="70" width="7" height="15" rx="3" fill="#cbd6e2"/>
+                <rect x="45" y="70" width="7" height="15" rx="3" fill="#cbd6e2"/>
+                <rect x="15" y="40" width="10" height="6" rx="2" fill="#cbd6e2" transform="rotate(-30 15 40)"/>
+                <rect x="55" y="40" width="10" height="6" rx="2" fill="#cbd6e2" transform="rotate(30 55 40)"/>
+            </g>
+        </svg>
+        <div class="astronaut-chat" id="astro-chat-bubble">Signal received! Need assistance, traveler?</div>
+    </div>
+
+    <!-- Floating AI Assistant Button & Dashboard -->
+    <div class="ai-assistant-wrapper">
+        <button class="ai-assistant-toggle-btn" id="ai-assistant-btn" aria-label="Toggle AI Assistant">
+            <i class="fas fa-brain"></i>
+            <span class="pulse-indicator"></span>
+        </button>
+        
+        <div class="ai-chat-panel glass-card" id="ai-chat-panel">
+            <div class="ai-panel-header">
+                <div class="ai-title"><i class="fas fa-robot"></i> PORTFOLIO ASSISTANT</div>
+                <button class="panel-close-btn" id="ai-panel-close">&times;</button>
+            </div>
+            <div class="ai-chat-box" id="ai-chat-messages">
+                <div class="chat-message ai-message">
+                    Hello! I am Santhosh's Portfolio Assistant. Ask me about his projects, credentials, or technical competencies.
+                </div>
+            </div>
+            <div class="ai-chat-input-wrap">
+                <input type="text" id="ai-input" placeholder="Ask me something (e.g. Projects, Skills)...">
+                <button id="ai-send-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Wave -->
+    <footer class="galaxy-footer">
+        <div class="footer-wave-wrap">
+            <svg class="footer-wave-svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+                </defs>
+                <g class="parallax-waves">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(14, 6, 32, 0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 242, 254, 0.15)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 0, 127, 0.1)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(3, 3, 8, 1)" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="footer-core">
+            <div class="footer-logo">
+                <span class="neon-purple font-neon">SANTHOSH</span><span class="neon-cyan font-neon">.AI</span>
+            </div>
+            <p class="footer-desc">Engineering high-quality software solutions and AI systems.</p>
+            
+            <div class="footer-portals">
+                <a href="https://linkedin.com" target="_blank" class="portal-link portal-linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com" target="_blank" class="portal-link portal-github" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:santhoshkumar200682@gmail.com" class="portal-link portal-mail" title="Mail"><i class="far fa-envelope"></i></a>
+                <a href="tel:9360973201" class="portal-link portal-phone" title="Phone"><i class="fas fa-phone-alt"></i></a>
+            </div>
+
+            <div class="footer-telemetry">
+                <span>CURRENT TIME: <span id="telemetry-time">00:00:00 UTC</span></span> | 
+                <span>PORTFOLIO STATUS: ONLINE</span>
+            </div>
+            
+            <div class="footer-copyright">
+                &copy; 2026 Santhosh R. Designed and developed with modern web standards.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS CDN Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- We will write our custom script.js which will contain particle starfield generation, custom physics, and synthesizers -->
+    <script src="script.js"></script>
+</body>
+</html>
